@@ -18,7 +18,8 @@ defmodule ParseAddress do
   the United States (:us)
 
   """
-  @spec parse(binary, atom) :: :none | :invalid_country | Address.t
+  @spec parse(text :: binary, country :: atom) :: :none | :invalid_country | Address.t
+  def parse(text), do: parse(text, :us)
   def parse(text, :us), do: US.parse_location(text)
   def parse(_, _), do: :invalid_country
 end

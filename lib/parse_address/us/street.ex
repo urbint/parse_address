@@ -4,7 +4,7 @@ defmodule ParseAddress.US.Street do
   https://www.census.gov/geo/maps-data/data/tiger-line.html
 
   """
-  @street_type %{
+  def street_type, do: %{
     "allee"      => "aly",
     "alley"      => "aly",
     "ally"       => "aly",
@@ -369,5 +369,5 @@ defmodule ParseAddress.US.Street do
     "wy"         => "way", 
   }
 
-  @street_type_list Enum.map(@street_type, fn {_, v} -> v end)
+  def street_type_list, do: Enum.map(street_type(), fn {_, v} -> v end)
 end

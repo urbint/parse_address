@@ -5,13 +5,15 @@ defmodule Address do
     city:          binary,
     zip:           binary,
     number:        binary,
+    street:        binary,
     prefix:        binary,
     type:          binary,
     suffix:        binary,
     sec_unit_type: binary,
     sec_unit_num:  binary,
 
-    # the following are used only when an intersection is detected 
+    # the following are used only when an intersection is detected
+    intersecting:  binary,
     prefix1:       binary,
     prefix2:       binary,
     type1:         binary,
@@ -26,11 +28,14 @@ defmodule Address do
     city: nil,
     zip: nil,
     number: nil,
+    street: nil,
     prefix: nil,
     type: nil,
     suffix: nil,
     sec_unit_type: nil,
     sec_unit_num: nil,
+
+    intersecting: nil,
     prefix1: nil,
     prefix2: nil,
     type1: nil,

@@ -3,7 +3,7 @@ defmodule ParseAddress.US.State do
   Maps lowercased US state and territory names to their canonical two-letter postal abbreviations.
 
   """
-  @state_code %{
+  def state_code, do: %{
     "alabama"                        => "AL",
     "alaska"                         => "AK",
     "american samoa"                 => "AS",
@@ -70,7 +70,7 @@ defmodule ParseAddress.US.State do
   the state's canonical two-letter postal abbreviation.
 
   """
-  @state_fips %{
+  def state_fips, do: %{
     "01" => "AL",
     "02" => "AK",
     "04" => "AZ",
@@ -126,5 +126,5 @@ defmodule ParseAddress.US.State do
     "78" => "VI", 
   }
 
-  @fips_state Enum.reduce(@state_fips, %{}, fn {k, v}, acc -> Map.merge(acc, %{v => k}) end)
+  def fips_state, do: Enum.reduce(state_fips(), %{}, fn {k, v}, acc -> Map.merge(acc, %{v => k}) end)
 end
